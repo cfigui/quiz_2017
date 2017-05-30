@@ -131,5 +131,15 @@ router.delete('/quizzes/:quizId(\\d+)/tips/:tipId(\\d+)',
     sessionController.loginRequired,
     tipController.destroy);
 
+//Definicion de rutas nuevas
+
+router.get('/quizzes/randomplay', quizController.practica52);
+router.get('/quizzes/randomcheck/:quizId(\\d+)', quizController.comprueba);
+
+
+// Pagina de ayuda
+router.get('/help', function(req,res,next){
+   res.render('help');
+});
 
 module.exports = router;
